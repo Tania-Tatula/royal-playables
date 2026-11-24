@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find the Royal Things</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><main>
+<h1>Find the Royal Things</h1>
+<div class="stage search">
+<div class="field" aria-label="Royal dressing room">
+<button class="object" style="--x:65%;--y:14%;--r:-10deg;--art:75%" aria-label="Crown"><img src="../assets/crown.webp" alt=""></button>
+<button class="object" style="--x:86%;--y:64%;--r:22deg;--art:66%" aria-label="Glove"><img src="../assets/glove.webp" alt=""></button>
+<button class="object" style="--x:52%;--y:46%;--r:13deg;--art:50%" aria-label="Brooch"><img src="../assets/brooch.webp" alt=""></button>
+<button class="object" style="--x:84%;--y:85%;--r:-14deg;--art:65%" aria-label="Invitation"><img src="../assets/invitation.webp" alt=""></button>
+<div class="sigh" aria-hidden="true" style="--mouth-x:31%;--mouth-y:45%"></div>
+<div class="reward" role="img" aria-label="The smiling king is dressed for the ball" hidden></div>
+</div>
+<div class="tray" aria-label="Things to find">
+<span><b aria-hidden="true"><img src="../assets/crown.webp" alt=""></b>Crown <small hidden>✓</small></span>
+<span><b aria-hidden="true"><img src="../assets/glove.webp" alt=""></b>Glove <small hidden>✓</small></span>
+<span><b aria-hidden="true"><img src="../assets/brooch.webp" alt=""></b>Brooch <small hidden>✓</small></span>
+<span><b aria-hidden="true"><img src="../assets/invitation.webp" alt=""></b>Invitation <small hidden>✓</small></span>
+</div>
+<div class="sheet" id="intro"><div class="card"><h2>The Royal Ball</h2><p>Help the king get ready for the ball by finding all four missing items.</p><button class="primary" id="start">Play</button></div></div>
+<div class="sheet" id="win" hidden><div class="card"><h2>Ready for the Ball!</h2><p>You found every royal item.</p><button class="primary" id="again">Play again</button></div></div>
+</div>
+<p class="status" aria-live="polite"></p><button class="reset" id="reset" hidden>Restart</button>
+</main><script src="../assets/game.js"></script></body>
+</html>
