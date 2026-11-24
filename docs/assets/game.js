@@ -34,7 +34,6 @@ let moves;
 const tiles = isPortrait ? solved.slice(0, empty).map((value) => {
   const tile = document.createElement('button');
   tile.className = 'tile';
-  tile.setAttribute('aria-label', `Move portrait tile ${value + 1}`);
   tile.style.backgroundPosition = `${(value % side) * 100 / (side - 1)}% ${Math.floor(value / side) * 100 / (side - 1)}%`;
   tile.onclick = () => slide(value);
   field.append(tile);
@@ -58,6 +57,9 @@ function drawPortrait() {
     tile.style.left = `${index % side * 100 / side}%`;
     tile.style.top = `${Math.floor(index / side) * 100 / side}%`;
     tile.classList.toggle('hint', index === hint);
+    const showTapHint = active && moves === 0 && index === hint;
+    tile.classList.toggle('tap-hint', showTapHint);
+    tile.setAttribute('aria-label', showTapHint ? 'Tap to move' : `Move portrait tile ${value + 1}`);
     tile.tabIndex = adjacent(index) && (hint === undefined || hint === index) ? 0 : -1;
   });
 }
@@ -151,6 +153,7 @@ start.onclick = () => {
   reset.hidden = false;
   field.inert = false;
   if (isPortrait) {
+    drawPortrait();
     statusLine.textContent = 'Tap the glowing tile.';
   } else {
     statusLine.textContent = '0 of 4 found';

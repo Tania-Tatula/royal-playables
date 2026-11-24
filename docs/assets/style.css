@@ -52,3 +52,22 @@ button { cursor:pointer }
   7% { opacity:.65 }
   24%,99% { opacity:0; transform:translate(85%,-45%) scale(1.2) }
 }
+
+.tile.tap-hint::after {
+  content:'Tap to move';
+  position:absolute;
+  bottom:7%;
+  left:50%;
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:95%;
+  padding:4px 7px;
+  border:1px solid #f7ca68;
+  border-radius:8px;
+  background:#2a194e;
+  color:#fff8dc;
+  font-size:clamp(11px,3.2vw,14px);
+  font-weight:800;
+  line-height:1.15;
+  pointer-events:none;
+}
